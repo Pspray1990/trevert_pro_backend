@@ -34,7 +34,7 @@ app.post("/api/wert/session", async (req: Request, res: Response) => {
 
     // 1. Calculate USDT Amount (1 USDT = $1 USD)
     // No live price fetch needed because USDT is pegged to USD
-    const totalAmount = quantity * NFT_PRICE_USD;
+    const totalAmount = quantity * NFT_PRICE_USD * 10 ** 6;
 
     // 2. Encode Smart Contract Call using Web3.js (Client's Requirement)
     const scInputData = web3.eth.abi.encodeFunctionCall({
