@@ -48,7 +48,7 @@ app.post("/api/wert/session", async (req: Request, res: Response) => {
         },
         {
           internalType: "uint256",
-          name: "nftQuantity",
+          name: "usdtNftCost",
           type: "uint256"
         }
       ],
