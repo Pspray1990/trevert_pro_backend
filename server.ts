@@ -34,7 +34,7 @@ app.post("/api/wert/session", async (req: Request, res: Response) => {
 
     // 1. Calculate USDT Amount (1 USDT = $1 USD)
     // No live price fetch needed because USDT is pegged to USD
-    const totalAmount = quantity * NFT_PRICE_USD * 10 ** 6;
+    const totalAmount = quantity * NFT_PRICE_USD;
 
     // 2. Encode Smart Contract Call using Web3.js (Client's Requirement)
     const scInputData = web3.eth.abi.encodeFunctionCall({
@@ -52,7 +52,7 @@ app.post("/api/wert/session", async (req: Request, res: Response) => {
           type: "uint256"
         }
       ],
-    }, [TREASURY_ADDRESS, quantity.toString()]);
+    }, [TREASURY_ADDRESS, (quantity * 10 ** 6).toString()]);
 
     // 3. Prepare Signing Options for USDT
     const signingOptions = {
