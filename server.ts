@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // --- PRODUCTION CONSTANTS ---
-const TREASURY_ADDRESS = '0x441134D72d3DfbDa2906c9AEE3BC959c8030387b';
+const TREASURY_ADDRESS = '0xD803e863BBF034680C89B68fB8f246Fb9e71963A';
 const PARTNER_ID = process.env.WERT_PARTNER_ID!;
 const PRIVATE_KEY = process.env.WERT_PRIVATE_KEY!;
 const CONTRACT_ADDRESS = process.env.NFT_CONTRACT!;
